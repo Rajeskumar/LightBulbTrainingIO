@@ -1,0 +1,199 @@
+ui module lightbulbTrainingIO {
+    page InventoryOverview {
+        "id": "lightbulbTrainingIO.InventoryOverview",
+        "name": "InventoryOverview",
+        "template": "lightbulbTrainingIO.???",
+        "thumbnail": "template-thumbs/120/ui.Dashboard2x2.gif",
+        "title": "Inventory Overview",
+        "url": "InventoryOverview",
+        "components": [
+            {
+                "id": "lightbulbTrainingIO.totalDailyHoldingCosts",
+                "renderTo": "#???",
+                "component": "???",
+                "title": "Today's Inventory Costs",
+                "box": true,
+                "valueField": "???",
+                "boxHeight": 200,
+                "prefixUnitString": "$",
+                "titleAlign": "center",
+                "data": {
+                    "record": "lightbulbTrainingIO.???"
+                }
+            },
+            {
+                "id": "lightbulbTrainingIO.lightbulbInUse",
+                "renderTo": "#???",
+                "component": "???",
+                "title": "LightBulbs In Use",
+                "box": true,
+                "valueField": "??",
+                "boxHeight": 200,
+                "titleAlign": "center",
+                "data": {
+                    "record": "lightbulbTrainingIO.???"
+                }
+            },
+            {
+                "id": "lightbulbTrainingIO.currentInventoryLevel",
+                "renderTo": "#???",
+                "component": "???",
+                "title": "LightBulbs in Stock",
+                "box": true,
+                "valueField": "???",
+                "boxHeight": 200,
+                "titleAlign": "center",
+                "data": {
+                    "record": "lightbulbTrainingIO.???"
+                }
+            },
+            {
+                "id": "lightbulbTrainingIO.inventoryCosts",
+                "component": "chart.???",
+                "renderTo": "#???",
+                "icon": "???",
+                "name": "Chart",
+                "box": true,
+                "aggregateData": true,
+                "alwaysAggregate": true,
+                "title": "Monthly Inventory Costs",
+                "data": {
+                    "collection": "lightbulbTrainingIO.???"
+                },
+                "metricFunction": "rollupMetrics",
+                "rollupFunc": "???",
+                "grain": "???",
+                "useIdsFromCollection": true,
+                "startDate": "2017-08-01",
+                "endDate": "2018-09-01",
+                "currentType": {
+                    "c3Type": "????"
+                },
+                "userMetricConfigs": [
+                    {
+                        "id": "InventoryHoldingCost",
+                        "info": {
+                            "id": "InventoryHoldingCost"
+                        },
+                        "chartConfig": {
+                            "name": "Holding Costs",
+                            "color": "#36a9e1",
+                            "type": "column",
+                            "index": 0,
+                            "unitId": "USD"
+                        },
+                        "metric": {
+                            "interval": "???",
+                            "id": "???"
+                        }
+                    },
+                    {
+                        "id": "FailureCost",
+                        "info": {
+                            "id": "FailureCost"
+                        },
+                        "chartConfig": {
+                            "name": "Failure Costs",
+                            "color": "#A3CCFF",
+                            "type": "column",
+                            "index": 0,
+                            "unitId": "USD"
+                        },
+                        "metric": {
+                            "interval": "???",
+                            "id": "???"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "WarehouseGrid",
+                "component": "lightbulbTrainingIO.???",
+                "box": true,
+                "height": 600,
+                "paginate": true,
+                "renderTo": "#???",
+                "data": {
+                    "collection": "lightbulbTrainingIO.???"
+                }
+            },
+            {
+                "id": "InventoryStatus",
+                "component": "chart.???",
+                "renderTo": "#???",
+                "icon": "???",
+                "name": "Chart",
+                "box": true,
+                "aggregateData": true,
+                "alwaysAggregate": true,
+                "useSingleYAxis": true,
+                "title": "Daily Inventory Status",
+                "data": {
+                    "collection": "lightbulbTrainingIO.???"
+                },
+                "metricFunction": "rollupMetrics",
+                "rollupFunc": "???",
+                "grain": "???",
+                "useIdsFromCollection": true,
+                "startDate": "2017-08-01",
+                "endDate": "2018-09-01",
+                "currentType": {
+                    "c3Type": "Warehouse"
+                },
+                "userMetricConfigs": [
+                    {
+                        "id": "Inventory",
+                        "info": {
+                            "id": "Inventory"
+                        },
+                        "chartConfig": {
+                            "name": "Inventory Level",
+                            "color": "#0099FF",
+                            "type": "line",
+                            "index": 0,
+                            "unitId": ""
+                        },
+                        "metric": {
+                            "interval": "???",
+                            "id": "???"
+                        }
+                    },
+                    {
+                        "id": "InventoryArrival",
+                        "info": {
+                            "id": "InventoryArrival"
+                        },
+                        "chartConfig": {
+                            "name": "Bulb Arrivals",
+                            "color": "#00ff00",
+                            "type": "line",
+                            "index": 0,
+                            "unitId": ""
+                        },
+                        "metric": {
+                            "interval": "???",
+                            "id": "???"
+                        }
+                    },
+                    {
+                        "id": "InventoryDeparture",
+                        "info": {
+                            "id": "InventoryDeparture"
+                        },
+                        "chartConfig": {
+                            "name": "Bulb Departures",
+                            "color": "#FF0000",
+                            "type": "line",
+                            "index": 0,
+                            "unitId": ""
+                        },
+                        "metric": {
+                            "interval": "???",
+                            "id": "???"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+type TransformCanonicalSmartBulbMeasurementToSmartBulbMeasurement mixes SmartBulbMeasurement transforms CanonicalSmartBulbMeasurement {
+  parent:   ~ expression "{id: sn}"
+  start:    ~ expression "start"
+  end:      ~ expression "end"
+  lumens:   ~ expression "lumens"
+}

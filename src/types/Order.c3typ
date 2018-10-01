@@ -1,0 +1,4 @@
+entity type Order mixes TimedValueHistory<Warehouse> schema name 'ORDR' {
+  quantity: int
+  promisedDeliveryDate: datetime
+}
